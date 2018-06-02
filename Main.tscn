@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Levels/SpaceBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Lvl1-Obstacles.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerShip/PlayerShip.tscn" type="PackedScene" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Items/PowerUp.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node" index="0"]
 
@@ -28,9 +29,21 @@ friction = 0.0
 
 position = Vector2( 100, 300 )
 scale = Vector2( 0.75, 0.75 )
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 SHOT_DELAY = 0.2
 
 [node name="HUD" parent="." index="4" instance=ExtResource( 5 )]
+
+[node name="PowerUp" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 708.405, 302.024 )
+
+[node name="PowerUp2" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 601.592, 200.121 )
+
+[connection signal="hit" from="PowerUp" to="." method="_on_PowerUp"]
+
+[connection signal="hit" from="PowerUp2" to="." method="_on_PowerUp"]
 
 

@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "textvar"
 
-var score
+var powerBarLevel = 0
 
 func _ready():
 	pass
@@ -15,4 +15,19 @@ func _physics_process(delta):
 	
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
+	if Input.is_key_pressed(KEY_T):
+		powerBarLevel+=1
+		$HUD.updatePowerBarLevel(powerBarLevel)
+	if Input.is_key_pressed(KEY_Y):
+		powerBarLevel-=1
+		$HUD.updatePowerBarLevel(powerBarLevel)
+		
 	pass
+
+
+func _on_PowerUp():
+	powerBarLevel += 1
+	$HUD.updatePowerBarLevel(powerBarLevel)
+
+
+
