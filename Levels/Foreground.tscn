@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/Foreground.gd" type="Script" id=1]
+[ext_resource path="res://images/foreground-test-1.png" type="Texture" id=2]
+
+[node name="Foreground" type="Node2D"]
+
+position = Vector2( 511.978, 300.052 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite" index="0"]
+
+z_index = 1
+input_pickable = false
+collision_layer = 524289
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Visibility", "Z Index" ]
+
+[node name="Bottom_CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D" index="0"]
+
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( 511.554, 297.357, -512.268, 297.357, -512.268, 162.072, -261.741, 213.848, -131.467, 182.114, 154.135, 187.125, 281.068, -8.28665, 379.609, 197.146, 491.511, 188.795, 513.224, 160.402 )
+
+[node name="Top_CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D" index="1"]
+
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( 511.132, -282.918, 437.672, -193.133, 338.365, -212.178, 236.337, -221.701, 86.6957, -224.422, -57.5039, -227.142, -124.162, -187.691, -198.983, -135.997, -237.073, -208.097, -343.182, -233.944, -469.697, -218.98, -514.59, -229.863, -514.59, -301.963, 509.772, -300.602 )
+
+[node name="Back_CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D" index="2"]
+
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( -511.978, -300.052, -511.978, 299.948, -501.978, 299.948, -501.978, -300.052 )
+disabled = true
+
+[node name="Back_CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite/StaticBody2D" index="3"]
+
+visible = false
+build_mode = 1
+polygon = PoolVector2Array( 498.022, -300.052, 498.022, 299.948, 508.022, 299.948, 508.022, -300.052 )
+disabled = true
+
+

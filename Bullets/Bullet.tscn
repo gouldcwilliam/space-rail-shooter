@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Bullets/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://images/bullet-1.png" type="Texture" id=2]
+[ext_resource path="res://images/bullet-2.png" type="Texture" id=3]
+[ext_resource path="res://images/bullet-3.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.4478
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "basic",
+"speed": 5.0
+} ]
+
+[node name="Bullet" type="RigidBody2D"]
+
+show_behind_parent = true
+position = Vector2( 512, 300 )
+input_pickable = false
+collision_layer = 0
+collision_mask = 2
+mode = 0
+mass = 1.02041e-05
+friction = 0.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -0.596802, 0.42627 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( -0.767334, -0.0852661 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 2 )
+animation = "basic"
+frame = 2
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+pause_animations = true
+freeze_bodies = true
+pause_particles = true
+pause_animated_sprites = true
+process_parent = false
+physics_process_parent = false
+
+[connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
+
+

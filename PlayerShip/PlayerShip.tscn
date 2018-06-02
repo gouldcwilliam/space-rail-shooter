@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://PlayerShip/PlayerShip.gd" type="Script" id=1]
+[ext_resource path="res://images/player_ship_2.png" type="Texture" id=2]
+[ext_resource path="res://images/player_ship_2_thruster.png" type="Texture" id=3]
+[ext_resource path="res://images/player_ship_2_thruster_jet_1.png" type="Texture" id=4]
+[ext_resource path="res://images/player_ship_2_thruster_jet_2.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "thruster",
+"speed": 1.0
+} ]
+
+[node name="PlayerShip" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+SHIP_SPEED = 200
+SHOT_DELAY = 0.25
+BULLET_SPEED = 700
+BULLET_TYPE = "basic"
+
+[node name="GunPosition" type="Position2D" parent="." index="0"]
+
+position = Vector2( 56.7193, 17.2681 )
+scale = Vector2( -1.12492, 0.836126 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ship" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+
+show_behind_parent = true
+position = Vector2( 0, -0.138885 )
+build_mode = 1
+polygon = PoolVector2Array( 10.7485, 31.8574, 30.8263, 23.5984, 54.0371, 22.1745, 65.9984, 7.65012, 65.144, 5.79898, 27.2667, -11.4309, 0.923492, -11.4309, -24.5653, -5.73508, -36.669, -7.58621, -45.6399, -11.8581, -45.4975, -16.5572, -64.009, -19.1203, -63.8666, -8.8678, -53.0445, -4.31113, -48.3455, 2.66626, -49.3422, 10.7828, -23.2838, 16.3363, -15.1675, 18.6146, -6.19659, 27.4431 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Thruster" type="Sprite" parent="." index="3"]
+
+position = Vector2( 1.53204, 24.9181 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Thruster" index="0"]
+
+position = Vector2( -0.682129, 36.4562 )
+frames = SubResource( 1 )
+animation = "thruster"
+playing = true
+
+

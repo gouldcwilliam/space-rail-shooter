@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://images/power-level-empty.png" type="Texture" id=2]
+
+[node name="HUD" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+POWERUPBARLEVEL = 0
+
+[node name="Sprite0" type="Sprite" parent="." index="0"]
+
+position = Vector2( 20, 595 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite1" type="Sprite" parent="." index="1"]
+
+position = Vector2( 40, 595 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 60, 595 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 80, 595 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 100, 595 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

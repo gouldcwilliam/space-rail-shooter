@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/foreground-test-1.png" type="Texture" id=1]
+
+[node name="Obstacles" type="StaticBody2D"]
+
+position = Vector2( 512, 300 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D-top" type="CollisionPolygon2D" parent="." index="1"]
+
+show_behind_parent = true
+build_mode = 0
+polygon = PoolVector2Array( -510.241, -227.629, -510.241, -299.651, 512.475, -299.651, 511.367, -281.922, 438.237, -192.172, 331.865, -213.224, 224.386, -223.197, -49.2986, -226.521, -119.105, -191.064, -198.883, -133.446, -237.664, -202.144, -346.252, -234.277, -470.352, -219.872 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+
+show_behind_parent = true
+build_mode = 0
+polygon = PoolVector2Array( -513.565, 169.047, -513.565, 297.579, 513.583, 302.012, 510.259, 159.075, 488.098, 187.884, 381.727, 193.424, 282.004, -11.5621, 155.688, 183.452, -127.969, 179.02, -257.609, 213.369 )
+_sections_unfolded = [ "Visibility" ]
+
+
