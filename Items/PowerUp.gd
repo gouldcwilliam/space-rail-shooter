@@ -7,8 +7,7 @@ signal hit
 # var b = "textvar"
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	visible=true
 	pass
 
 #func _process(delta):

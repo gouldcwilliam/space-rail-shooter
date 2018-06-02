@@ -3,10 +3,10 @@ extends Node
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-
 var powerBarLevel = 0
 
 func _ready():
+	test_PowerUps()
 	pass
 
 func _physics_process(delta):
@@ -29,5 +29,13 @@ func _on_PowerUp():
 	powerBarLevel += 1
 	$HUD.updatePowerBarLevel(powerBarLevel)
 
-
+func test_PowerUps():
+	var powerUp1 = preload("res://Items/PowerUp.tscn").instance()
+	var powerUp2 = preload("res://Items/PowerUp.tscn").instance()
+	add_child(powerUp1)
+	add_child(powerUp2)
+	powerUp1.connect("hit", self, "_on_PowerUp")
+	powerUp2.connect("hit", self, "_on_PowerUp")
+	powerUp1.position = Vector2(700, 300)
+	powerUp2.position = Vector2(800, 100)
 

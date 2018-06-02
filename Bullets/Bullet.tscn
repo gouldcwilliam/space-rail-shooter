@@ -16,7 +16,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "basic",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="Bullet" type="RigidBody2D"]
@@ -55,7 +55,7 @@ position = Vector2( -0.767334, -0.0852661 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "basic"
-frame = 3
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

@@ -12,10 +12,10 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "thruster",
-"speed": 1.0
+"speed": 10.0
 } ]
 
-[node name="PlayerShip" type="KinematicBody2D"]
+[node name="PlayerShip" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -60,6 +60,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -0.682129, 36.4562 )
 frames = SubResource( 1 )
 animation = "thruster"
+frame = 1
 playing = true
 
 
