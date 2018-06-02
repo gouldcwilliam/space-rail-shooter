@@ -26,8 +26,6 @@ func _process(delta):
 func updatePowerBarLevel():
 	if POWERUPBARLEVEL > 0 :
 		$Sprite0.set_texture(powerUpBar_FullTexture)
-#	elif POWERUPBARLEVEL == 0:
-#		$Sprite0.set_texture(powerUpBar_EmptyTexture)
 	else:
 		$Sprite0.set_texture(powerUpBar_EmptyTexture)
 		
