@@ -6,3 +6,9 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+
+*.ini2
+*.ptn
+*.ptn2
+*.ppinfocache
+
