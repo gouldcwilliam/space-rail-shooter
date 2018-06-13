@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://PlayerShip/PlayerShip.gd" type="Script" id=1]
 [ext_resource path="res://images/player_ship_2.png" type="Texture" id=2]
 [ext_resource path="res://images/player_ship_2_thruster.png" type="Texture" id=3]
 [ext_resource path="res://images/player_ship_2_thruster_jet_1.png" type="Texture" id=4]
 [ext_resource path="res://images/player_ship_2_thruster_jet_2.png" type="Texture" id=5]
+[ext_resource path="res://sounds/gun-1.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -62,5 +63,15 @@ frames = SubResource( 1 )
 animation = "thruster"
 frame = 1
 playing = true
+
+[node name="GunSound" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = -20.0
+autoplay = false
+max_distance = 65536.0
+attenuation = 0.0
+bus = "Master"
+area_mask = 1
 
 

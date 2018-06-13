@@ -61,6 +61,7 @@ func shoot():
 	bullet.bullet_type = BULLET_TYPE
 	bullet.add_collision_exception_with(self)
 	get_parent().add_child(bullet)
+	$GunSound.play()
 	can_shoot = false
 	shot_timer.start()
 
