@@ -64,14 +64,12 @@ animation = "thruster"
 frame = 1
 playing = true
 
-[node name="GunSound" type="AudioStreamPlayer2D" parent="." index="4"]
+[node name="GunSound" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 6 )
 volume_db = -20.0
 autoplay = false
-max_distance = 65536.0
-attenuation = 0.0
+mix_target = 0
 bus = "Master"
-area_mask = 1
 
 
