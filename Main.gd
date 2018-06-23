@@ -7,6 +7,7 @@ var powerBarLevel = 0
 
 func _ready():
 	test_PowerUps()
+	test_Enemies()
 	pass
 
 func _physics_process(delta):
@@ -38,4 +39,10 @@ func test_PowerUps():
 	powerUp2.connect("hit", self, "_on_PowerUp")
 	powerUp1.position = Vector2(700, 300)
 	powerUp2.position = Vector2(800, 100)
+	
+func test_Enemies():
+	var enemy1 = preload("res://Enemies/BasicEnemy1.tscn").instance()
+	add_child(enemy1)
+	enemy1.connect("hit", self, "_on_EnemyHit")
+	enemy1.position = Vector2(600, 200)
 

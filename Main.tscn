@@ -6,7 +6,7 @@
 [ext_resource path="res://PlayerShip/PlayerShip.tscn" type="PackedScene" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -32,5 +32,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 SHOT_DELAY = 0.2
 
 [node name="HUD" parent="." index="4" instance=ExtResource( 5 )]
+
+[node name="Enemies" type="Node2D" parent="." index="5"]
 
 

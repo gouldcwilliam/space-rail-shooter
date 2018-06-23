@@ -22,3 +22,4 @@ func _ready():
 
 func _on_VisibilityEnabler2D_screen_exited():
 	queue_free()
+
