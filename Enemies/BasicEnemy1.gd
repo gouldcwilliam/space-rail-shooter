@@ -17,5 +17,6 @@ func _ready():
 
 func _on_BasicEnemy1_body_entered(body):
 	body.queue_free()
+	emit_signal("hit", self)
 	queue_free()
 	pass # replace with function body

@@ -29,6 +29,12 @@ func _physics_process(delta):
 func _on_PowerUp():
 	powerBarLevel += 1
 	$HUD.updatePowerBarLevel(powerBarLevel)
+	
+func _on_EnemyHit(body):
+	var powerUp = preload("res://Items/PowerUp.tscn").instance()
+	add_child(powerUp)
+	powerUp.position = body.position
+	powerUp.connect("hit", self, "_on_PowerUp")
 
 func test_PowerUps():
 	var powerUp1 = preload("res://Items/PowerUp.tscn").instance()
